@@ -1,0 +1,41 @@
+-- CONSULTANDO DB EXISTENTES
+SHOW DATABASES;
+
+
+-- CRIANDO O BANCO DE DADOS
+CREATE DATABASE DB_T04703_FILIPE_BERNARDO;
+
+-- ACESSANDO O BD
+USE DB_T04703_FILIPE_BERNARDO;
+
+-- CRIANDO A TABELA CLIENTES
+CREATE TABLE TB_CLIENTES (
+	id_cliente INT PRIMARY KEY,
+    nome_cliente VARCHAR(100),
+    telefone VARCHAR(20),
+    data_nascimento DATE
+);
+
+-- INSERINDO REGISTROS NA TABELA CLIENTES
+INSERT INTO TB_CLIENTES (id_cliente, nome_cliente, telefone, data_nascimento)
+VALUES (1, 'FILIPE BERNARDO', '(14) 87341-1276', '2003-08-24');
+
+INSERT INTO TB_CLIENTES (id_cliente, nome_cliente, telefone, data_nascimento)
+VALUES (2, 'José Alves', '(13) 37384-4731', '1995-05-21');
+
+INSERT INTO TB_CLIENTES (id_cliente, nome_cliente, telefone, data_nascimento)
+VALUES (3, 'Sérgio Silva', '(15) 47821-4586', '1992-01-12');
+
+-- INSERT MULTIPLOS COM UNICO VALUES
+INSERT INTO TB_CLIENTES (id_cliente, nome_cliente, telefone, data_nascimento)
+VALUES (4, 'Márcio Ferreira', '(08) 21345-1243', '1967-05-08'), 
+	   (5, 'Carlos Souza', '(18) 23458-2123', '2007-03-21');
+    
+    
+-- CONSULTANDO AS INFORMAÇÕES DA TABELA CRIADA
+SELECT * FROM TB_CLIENTES;
+
+-- CONSULTANDO CLIENTE ESPECIFICO
+SELECT * FROM TB_CLIENTES
+WHERE nome_cliente = 'FILIPE BERNARDO';
+
