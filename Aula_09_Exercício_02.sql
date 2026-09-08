@@ -10,11 +10,11 @@ CREATE TABLE RESERVAS (
 
 -- 2. INSERINDO DADOS NA TABELA
 INSERT INTO RESERVAS (id, cliente, cidade, pessoas)
-VALUES (1, 'Marcos','Rio de Janeiro', 5),
-	   (2, 'Maria', 'São Paulo', 3),
-       (3, 'José', 'Salvador', 2),
-       (4, 'Rosana', 'Belo Horizonte', 4),
-       (5, 'Isabela', 'Curitiba', 7);
+VALUES ('Marcos','Rio de Janeiro', 5),
+	   ('Maria', 'São Paulo', 3),
+       ('José', 'Salvador', 2),
+       ('Rosana', 'Belo Horizonte', 4),
+       ('Isabela', 'Curitiba', 7);
        
        
 -- 3. CONSULTANDO A TABELA
