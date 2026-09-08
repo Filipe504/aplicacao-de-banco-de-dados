@@ -1,0 +1,41 @@
+
+-- 1. CRIANDO A TABELA RESERVAS
+CREATE TABLE RESERVAS (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+    cliente VARCHAR(50),
+    cidade VARCHAR(30),
+    pessoas INT
+);
+
+
+-- 2. INSERINDO DADOS NA TABELA
+INSERT INTO RESERVAS (id, cliente, cidade, pessoas)
+VALUES (1, 'Marcos','Rio de Janeiro', 5),
+	   (2, 'Maria', 'São Paulo', 3),
+       (3, 'José', 'Salvador', 2),
+       (4, 'Rosana', 'Belo Horizonte', 4),
+       (5, 'Isabela', 'Curitiba', 7);
+       
+       
+-- 3. CONSULTANDO A TABELA
+SELECT * FROM RESERVAS;
+
+-- 4. ADICIONANDO UMA NOVA COLUNA
+ALTER TABLE RESERVAS
+ADD COLUMN data_reserva DATE;
+
+-- 5. RENOMEANDO O NOME DA COLUNA 'PESSOAS'
+ALTER TABLE RESERVAS
+CHANGE COLUMN pessoas quantidade_pessoas INT;
+
+-- 6. AUMENTANDO A COLUNA CLIENTE PARA 100 CARACTERES
+ALTER TABLE RESERVAS
+MODIFY COLUMN cliente VARCHAR(100);
+
+-- 7. CRIANDO UMA NOVA COLUNA - 'STATUS'
+ALTER TABLE RESERVAS
+ADD COLUMN status VARCHAR(50);
+
+-- 8. DELETANDO A COLUNA 'STATUS'
+ALTER TABLE RESERVAS
+DROP COLUMN status;
