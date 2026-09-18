@@ -105,8 +105,8 @@ SELECT * FROM funcionarios;
 
 -- 4. DESAFIO 02
 -- RELATÓRIO COM O NOME DE CADA FUNCIONÁRIO E SEU NÍVEL SALARIAL
-SELECT fun.id_funcionario AS ID_Funcionario,
-	   nome_funcionario AS Funcionario,
+SELECT fun.id_funcionario AS ID_Funcionário,
+	   nome_funcionario AS Funcionário,
        salario AS Salário,
        nivel AS Nível
 FROM tb_funcionarios fun
