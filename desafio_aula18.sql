@@ -98,15 +98,15 @@ INSERT INTO tb_faixa_salarial (id_faixa, nivel, salario_min, salario_max) VALUES
 
 
 -- 3. FAZER CONSULTA INCIAL
-SELECT * FROM departamentos;
-SELECT * FROM funcionarios;
+SELECT * FROM tb_funcionarios;
+SELECT * FROM tb_faixa_salarial;
 
 
 
 -- 4. DESAFIO 02
 -- RELATÓRIO COM O NOME DE CADA FUNCIONÁRIO E SEU NÍVEL SALARIAL
-SELECT fun.id_funcionario AS ID_Funcionário,
-	   nome_funcionario AS Funcionário,
+SELECT fun.id_funcionario AS ID_Funcionario,
+	   nome_funcionario AS Funcionario,
        salario AS Salário,
        nivel AS Nível
 FROM tb_funcionarios fun
@@ -173,9 +173,9 @@ INSERT INTO tb_faixa_salarial2 (id_faixa, nivel, salario_min, salario_max) VALUE
 
 
 -- 3. FAZER CONSULTA INCIAL
-SELECT * FROM departamentos;
-SELECT * FROM funcionarios;
-
+SELECT * FROM tb_departamentos;
+SELECT * FROM tb_funcionarios2;
+SELECT * FROM tb_faixa_salarial2;
 
 
 -- 4. DESAFIO 03
@@ -186,8 +186,8 @@ SELECT fun.id_funcionario AS ID_Funcionário,
        nivel AS Nível,
 	   nome_departamento AS Departamento
 FROM tb_funcionarios2 fun
-LEFT JOIN tb_departamentos dep
+INNER JOIN tb_departamentos dep
 ON fun.id_departamento = dep.id_departamento
 INNER JOIN tb_faixa_salarial2 faixa
 ON fun.salario BETWEEN faixa.salario_min AND faixa.salario_max
-WHERE faixa.nivel = 'Pleno';
+WHERE faixa.nivel = 'Pleno' AND dep.nome_departamento = 'Vendas';
